@@ -1,0 +1,15 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor temp files
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Git
+.git/
