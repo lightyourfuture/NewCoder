@@ -1,0 +1,82 @@
+\documentclass[11pt,a4paper,oneside,openany,fontset=none]{ctexbook}
+\usepackage[left=40mm,right=18mm,top=22mm,bottom=22mm,marginparwidth=25mm,marginparsep=6mm]{geometry}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{Heiti SC}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Menlo}[Scale=0.86]
+\usepackage{amsmath,amssymb,booktabs,longtable,array,calc}
+\usepackage{caption}
+\newcounter{none}
+\usepackage{xcolor,graphicx,fancyhdr,titlesec,enumitem,framed,fvextra}
+\usepackage[most]{tcolorbox}
+\definecolor{ink}{HTML}{193D44}
+\definecolor{teal}{HTML}{18746B}
+\definecolor{paper}{HTML}{EFF5F2}
+\definecolor{muted}{HTML}{5B6B6E}
+\definecolor{copper}{HTML}{AE6747}
+\usepackage[colorlinks=true,linkcolor=teal,urlcolor=teal,bookmarksnumbered=true,pdftitle={提示词工程：从理解到独立应用},pdfauthor={Codex}]{hyperref}
+\usepackage{bookmark}
+\usepackage{microtype}
+\linespread{1.12}
+\setlength{\parskip}{0.36em}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\setlist{nosep,leftmargin=1.6em,topsep=0.45em,itemsep=0.25em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\renewcommand{\arraystretch}{1.25}
+\newcommand{\cue}[1]{\reversemarginpar\marginpar{\raggedright\color{teal}\sffamily\footnotesize\textbf{回忆线索}\par\smallskip #1\par\medskip\color{teal!35}\rule{\linewidth}{0.5pt}}}
+\renewenvironment{quote}{\begin{tcolorbox}[enhanced,breakable,colback=paper,colframe=teal!25,boxrule=0.5pt,arc=2mm,left=3mm,right=3mm,top=2mm,bottom=2mm]\small}{\end{tcolorbox}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\},fontsize=\small}
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines,breakanywhere,fontsize=\small}
+\newenvironment{Shaded}{\begin{tcolorbox}[enhanced,breakable,colback=paper,colframe=teal!15,boxrule=0pt,arc=1mm,left=2.5mm,right=2.5mm,top=2mm,bottom=2mm]}{\end{tcolorbox}}
+\ctexset{chapter={name={第,章},number=\arabic{chapter},format=\huge\sffamily\bfseries\color{ink},beforeskip=2pt,afterskip=22pt},section={format=\Large\sffamily\bfseries\color{ink},beforeskip=14pt,afterskip=8pt},subsection={format=\large\sffamily\bfseries\color{teal},beforeskip=8pt,afterskip=5pt}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{muted}提示词工程\quad /\quad 自学教材}
+\fancyhead[R]{\small\sffamily\color{muted}\nouppercase{\leftmark}}
+\fancyfoot[L]{\scriptsize\sffamily\color{muted}理解 → 回忆 → 应用 → 核验}
+\fancyfoot[R]{\sffamily\color{teal}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{15pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[L]{\scriptsize\sffamily\color{muted}提示词工程 / 从理解到独立应用}\fancyfoot[R]{\sffamily\color{teal}\thepage}\renewcommand{\headrulewidth}{0pt}}
+\hypersetup{pdfstartview=FitH}
+\begin{document}
+\begin{titlepage}
+\newgeometry{left=28mm,right=28mm,top=30mm,bottom=25mm}
+\pagecolor{ink}\color{white}
+\sffamily
+{\small SELF-STUDY SERIES\hfill 01 / PROMPT ENGINEERING}\par
+\vspace{28mm}
+{\fontsize{38}{48}\selectfont\bfseries 提示词工程}\par
+\vspace{8mm}
+{\fontsize{24}{34}\selectfont 从理解到独立应用}\par
+\vspace{13mm}
+{\large 把练习中的知识点，学成可迁移的方法。}\par
+\vfill
+\begin{tikzpicture}
+\draw[white!35,line width=1pt] (0,0)--(14,0);
+\foreach \x/\t in {0/任务,3.4/示例,6.8/依据,10.2/评测}{\fill[copper] (\x,-0.8) circle (2pt);\node[anchor=west,text=white] at (\x+0.2,-0.8){\t};}
+\end{tikzpicture}\par
+\vspace{13mm}
+{\normalsize 11 章循序讲解\quad ·\quad 康奈尔式页侧回忆线索\par 原创迁移练习\quad ·\quad 离线浏览器练习台}\par
+\vspace{14mm}
+{\small NewCoder 学习资料\hfill Codex 编写 / 2026.11}
+\end{titlepage}
+\nopagecolor\color{black}\restoregeometry
+\frontmatter
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{-1}
+\newgeometry{left=28mm,right=22mm,top=23mm,bottom=24mm}
+\input{preface.tex}
+\clearpage\restoregeometry
+\tableofcontents
+\setcounter{secnumdepth}{1}
+\mainmatter
+\fontsize{10.5}{12.8}\selectfont
+\input{body.tex}
+\appendix
+\input{appendix.tex}
+\end{document}
